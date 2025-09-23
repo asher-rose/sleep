@@ -34,6 +34,7 @@
                     Transform Your Sleep Environment for 
                     <span class="highlight">Peak Performance</span>
                 </h1>
+                <h2 class="hero-subheading">The world's most comprehensive 4-day sleep environment assessment</h2>
                 <p class="hero-subtitle">
                     Professional 4 day assessments with comprehensive analysis of your sleeping environment using advanced monitoring technology. 
                     Get data-driven recommendations to optimize air quality, light, sound, temperature, and more 
@@ -41,7 +42,7 @@
                 </p>
                 <div class="hero-cta">
                     <button class="btn btn-primary">Schedule Assessment</button>
-                    <button class="btn btn-secondary">Learn More</button>
+                    <a href="quiz.html" class="btn btn-secondary">Take Sleep Assessment Quiz</a>
                 </div>
             </div>
             <div class="hero-visual">
@@ -49,8 +50,7 @@
                     <!-- Sleep Timeline -->
                     <div class="sleep-timeline">
                         <div class="timeline-header">
-                            <h3>Healthy Sleep Cycle</h3>
-                            <p>8 Hours of Restorative Sleep</p>
+                            <h3>Restorative, High Performance Sleep</h3>
                         </div>
 
                         <!-- Time Labels -->
@@ -292,87 +292,144 @@
     <!-- Benefits Section -->
     <section id="benefits" class="benefits">
         <div class="container">
-            <div class="benefits-content">
-                <div class="benefits-text">
-                    <h2>The Hidden Cost of Poor Sleep</h2>
-                    <p class="benefits-intro">
-                        Poor sleep quality doesn't just leave you tired—it significantly impacts your cognitive function, 
-                        physical performance, and overall health.
-                    </p>
-                    <div class="benefit-list">
-                        <div class="benefit-item">
-                            <h4>Mental Performance</h4>
-                            <p>Poor sleep reduces focus, memory, and decision-making abilities by up to 40%</p>
-                        </div>
-                        <div class="benefit-item">
-                            <h4>Physical Recovery</h4>
-                            <p>Inadequate sleep slows muscle recovery and weakens immune system function</p>
-                        </div>
-                        <div class="benefit-item">
-                            <h4>Long-term Health</h4>
-                            <p>Chronic poor sleep increases risk of cardiovascular disease, diabetes, and mental health issues</p>
-                        </div>
+            <div class="section-header">
+                <h2>The Hidden Cost of Poor Sleep</h2>
+                <p class="benefits-intro">
+                    Poor sleep quality doesn't just leave you tired—it significantly impacts your cognitive function, 
+                    physical performance, and overall health.
+                </p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 12l2 2 4-4"/>
+                            <path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9c1.5 0 2.9.37 4.13 1.02"/>
+                        </svg>
                     </div>
+                    <h3>Mental Performance</h3>
+                    <p>Poor sleep reduces focus, memory, and decision-making abilities by up to 40%</p>
                 </div>
-                <div class="benefits-visual">
-                    <div class="sleep-line-graph">
-                        <div class="graph-header">
-                            <h3>Sleep Quality Comparison</h3>
-                            <p>8-hour sleep patterns showing the difference between poor and healthy sleep</p>
-                        </div>
-                        <div class="graph-container">
-                            <div class="graph-legend">
-                                <div class="legend-item">
-                                    <div class="legend-line poor-sleep"></div>
-                                    <span>Poor Sleep Pattern</span>
-                                </div>
-                                <div class="legend-item">
-                                    <div class="legend-line healthy-sleep"></div>
-                                    <span>Healthy Sleep Pattern</span>
-                                </div>
-                            </div>
-                            <div class="graph-chart">
-                                <div class="y-axis">
-                                    <div class="y-label">Awake</div>
-                                    <div class="y-label">REM Sleep</div>
-                                    <div class="y-label">Light Sleep</div>
-                                    <div class="y-label">Deep Sleep</div>
-                                </div>
-                                <div class="chart-area">
-                                    <svg viewBox="0 0 800 300" class="sleep-chart-svg">
-                                        <!-- Poor Sleep Pattern (Red) - Smoothed but still erratic -->
-                                        <path class="sleep-line poor-sleep" d="M0,50 Q25,70 50,60 Q75,40 100,80 Q125,120 150,100 Q175,180 200,120 Q225,80 250,140 Q275,180 300,100 Q325,60 350,120 Q375,180 400,100 Q425,80 450,140 Q475,180 500,120 Q525,80 550,140 Q575,180 600,100 Q625,60 650,120 Q675,180 700,140 Q725,100 750,120 Q775,140 800,100" stroke="#dc2626" stroke-width="3" fill="none" opacity="0.8"/>
-                                        
-                                        <!-- Poor Sleep Wake-ups (Red spikes) - Smoothed spikes -->
-                                        <path class="wake-spike" d="M120,50 Q120,125 120,200" stroke="#dc2626" stroke-width="2"/>
-                                        <path class="wake-spike" d="M240,50 Q240,115 240,180" stroke="#dc2626" stroke-width="2"/>
-                                        <path class="wake-spike" d="M360,50 Q360,125 360,200" stroke="#dc2626" stroke-width="2"/>
-                                        <path class="wake-spike" d="M480,50 Q480,105 480,160" stroke="#dc2626" stroke-width="2"/>
-                                        <path class="wake-spike" d="M600,50 Q600,120 600,190" stroke="#dc2626" stroke-width="2"/>
-                                        <path class="wake-spike" d="M720,50 Q720,110 720,170" stroke="#dc2626" stroke-width="2"/>
-                                        
-                                        <!-- Healthy Sleep Pattern (Green) - Realistic 8-hour sleep cycle progression -->
-                                        <path class="sleep-line healthy-sleep" d="M0,120 Q40,100 80,80 Q120,60 160,40 Q200,30 240,25 Q280,30 320,40 Q360,50 400,60 Q440,70 480,80 Q520,90 560,100 Q600,110 640,120 Q680,130 720,140 Q760,150 800,160" stroke="#2d5a3d" stroke-width="3" fill="none" opacity="0.9"/>
-                                        
-                                        <!-- Grid lines -->
-                                        <line x1="0" y1="50" x2="800" y2="50" stroke="#404040" stroke-width="1" opacity="0.3"/>
-                                        <line x1="0" y1="100" x2="800" y2="100" stroke="#404040" stroke-width="1" opacity="0.3"/>
-                                        <line x1="0" y1="150" x2="800" y2="150" stroke="#404040" stroke-width="1" opacity="0.3"/>
-                                        <line x1="0" y1="200" x2="800" y2="200" stroke="#404040" stroke-width="1" opacity="0.3"/>
-                                        <line x1="0" y1="250" x2="800" y2="250" stroke="#404040" stroke-width="1" opacity="0.3"/>
-                                        
-                                        <!-- Time markers -->
-                                        <text x="0" y="280" fill="#a1a1aa" font-size="12" font-family="Ovo">10 PM</text>
-                                        <text x="200" y="280" fill="#a1a1aa" font-size="12" font-family="Ovo">12 AM</text>
-                                        <text x="400" y="280" fill="#a1a1aa" font-size="12" font-family="Ovo">2 AM</text>
-                                        <text x="600" y="280" fill="#a1a1aa" font-size="12" font-family="Ovo">4 AM</text>
-                                        <text x="800" y="280" fill="#a1a1aa" font-size="12" font-family="Ovo">6 AM</text>
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                        </svg>
                     </div>
+                    <h3>Physical Recovery</h3>
+                    <p>Inadequate sleep slows muscle recovery and weakens immune system function</p>
                 </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                    </div>
+                    <h3>Long-term Health</h3>
+                    <p>Chronic poor sleep increases risk of cardiovascular disease, diabetes, and mental health issues</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5"/>
+                            <path d="M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3>Emotional Regulation</h3>
+                    <p>Sleep deprivation amplifies stress responses, increases irritability, and reduces emotional resilience by 60%</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24"/>
+                        </svg>
+                    </div>
+                    <h3>Metabolic Function</h3>
+                    <p>Poor sleep disrupts glucose metabolism, increases insulin resistance, and triggers weight gain through hormonal imbalances</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9c1.5 0 2.9.37 4.13 1.02"/>
+                            <path d="M12 3v6l4-4"/>
+                        </svg>
+                    </div>
+                    <h3>Immune System</h3>
+                    <p>Insufficient sleep reduces natural killer cell activity by 70%, making you 3x more susceptible to infections</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5"/>
+                            <path d="M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3>Creativity & Innovation</h3>
+                    <p>Sleep deprivation impairs divergent thinking, problem-solving abilities, and creative insight formation</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5"/>
+                            <path d="M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3>Safety & Risk Assessment</h3>
+                    <p>Poor sleep increases accident risk by 300% and impairs judgment in high-stakes situations</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <h3>Social Relationships</h3>
+                    <p>Sleep deprivation reduces empathy, social awareness, and communication effectiveness, straining personal and professional relationships</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14,2 14,8 20,8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                        </svg>
+                    </div>
+                    <h3>Learning & Memory</h3>
+                    <p>Inadequate sleep prevents proper memory formation, reducing learning retention by up to 50%</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5"/>
+                            <path d="M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3>Hormonal Balance</h3>
+                    <p>Poor sleep disrupts cortisol, growth hormone, and testosterone production, affecting energy, mood, and physical development</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 3v18h18"/>
+                            <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/>
+                        </svg>
+                    </div>
+                    <h3>Productivity & Efficiency</h3>
+                    <p>Sleep deprivation reduces work performance by 25% and increases time-to-completion for complex tasks by 40%</p>
+                </div>
+            </div>
+            <div class="benefits-cta">
+                <a href="quiz.html" class="btn btn-secondary">Take Sleep Assessment Quiz</a>
+                <button class="btn btn-primary">Schedule Your Assessment</button>
             </div>
         </div>
     </section>
@@ -412,6 +469,81 @@
                         <li>Performance impact modeling</li>
                     </ul>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="comparison">
+        <div class="container">
+            <div class="section-header">
+                <h2>How We Compare</h2>
+                <p>See how SleepOptima's comprehensive approach differs from other sleep assessment services</p>
+            </div>
+            <div class="comparison-table-container">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Service</th>
+                            <th>Assessment Duration</th>
+                            <th>Location</th>
+                            <th>Environmental Monitoring</th>
+                            <th>Physiological Tracking</th>
+                            <th>Data Analysis</th>
+                            <th>Personalized Recommendations</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="sleepoptima-row">
+                            <td class="service-name">
+                                <strong>SleepOptima</strong>
+                                <span class="service-tag">Our Service</span>
+                            </td>
+                            <td>4 days</td>
+                            <td>In-home</td>
+                            <td>✅ Comprehensive (11 metrics)</td>
+                            <td>✅ Advanced (7 parameters)</td>
+                            <td>✅ AI-powered correlation analysis</td>
+                            <td>✅ Detailed optimization plan</td>
+                        </tr>
+                        <tr>
+                            <td class="service-name">Sleep Lab PSG</td>
+                            <td>1 night</td>
+                            <td>Clinical facility</td>
+                            <td>❌ Limited</td>
+                            <td>✅ Comprehensive</td>
+                            <td>✅ Professional analysis</td>
+                            <td>⚠️ Medical focus only</td>
+                        </tr>
+                        <tr>
+                            <td class="service-name">Home Sleep Tests</td>
+                            <td>1-3 nights</td>
+                            <td>In-home</td>
+                            <td>❌ None</td>
+                            <td>⚠️ Basic (breathing, heart rate)</td>
+                            <td>⚠️ Automated scoring</td>
+                            <td>⚠️ Limited recommendations</td>
+                        </tr>
+                        <tr>
+                            <td class="service-name">Wearable Devices (Oura, Apple Watch)</td>
+                            <td>Continuous</td>
+                            <td>In-home</td>
+                            <td>❌ None</td>
+                            <td>⚠️ Basic (HR, movement)</td>
+                            <td>⚠️ Algorithm-based</td>
+                            <td>⚠️ Generic suggestions</td>
+                        </tr>
+                        <tr>
+                            <td class="service-name">Sleep Questionnaires</td>
+                            <td>5-15 minutes</td>
+                            <td>Anywhere</td>
+                            <td>❌ None</td>
+                            <td>❌ None</td>
+                            <td>⚠️ Self-reported only</td>
+                            <td>⚠️ Generic advice</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
