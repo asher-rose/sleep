@@ -1,4 +1,4 @@
-# SleepOptima Landing Page
+# Sanctuary Lab Landing Page
 
 A clean, minimalist landing page for a high-ticket sleep environment assessment service. This professional website showcases the benefits of optimizing sleep environments for peak mental and physical performance.
 
@@ -93,7 +93,7 @@ A clean, minimalist landing page for a high-ticket sleep environment assessment 
 ## File Structure
 
 ```
-sleep-optima-landing/
+sanctuary-lab-landing/
 ├── index.html          # Main HTML file
 ├── styles.css          # Complete CSS styling
 ├── script.js           # Interactive JavaScript

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sleep Environment Assessment | Optimize Your Sleep for Peak Performance</title>
+    <title>Sleep Environment Assessment | Sanctuary Lab - Optimize Your Sleep for Peak Performance</title>
     <meta name="description" content="Professional sleep environment assessment service. 4 day assessments with data-driven analysis of your sleeping environment to optimize air quality, light, sound, temperature and more for better sleep and performance.">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,7 +15,7 @@
     <nav class="nav">
         <div class="nav-container">
             <div class="nav-logo">
-                <h2>SleepOptima</h2>
+                <h2>Sanctuary Lab</h2>
             </div>
             <div class="nav-menu">
                 <a href="#services" class="nav-link">Services</a>
@@ -295,12 +295,13 @@
             <div class="section-header">
                 <h2>The Hidden Cost of Poor Sleep</h2>
                 <p class="benefits-intro">
-                    Poor sleep quality doesn't just leave you tired—it significantly impacts your cognitive function, 
+                    Poor sleep quality doesn't just leave you tired: It significantly impacts your cognitive function, 
                     physical performance, and overall health.
                 </p>
             </div>
             <div class="benefits-grid">
-                <div class="benefit-card">
+                <!-- Primary 6 cards (always visible) -->
+                <div class="benefit-card benefit-card-primary">
                     <div class="benefit-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M9 12l2 2 4-4"/>
@@ -310,7 +311,7 @@
                     <h3>Mental Performance</h3>
                     <p>Poor sleep reduces focus, memory, and decision-making abilities by up to 40%</p>
                 </div>
-                <div class="benefit-card">
+                <div class="benefit-card benefit-card-primary">
                     <div class="benefit-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
@@ -319,7 +320,7 @@
                     <h3>Physical Recovery</h3>
                     <p>Inadequate sleep slows muscle recovery and weakens immune system function</p>
                 </div>
-                <div class="benefit-card">
+                <div class="benefit-card benefit-card-primary">
                     <div class="benefit-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
@@ -328,7 +329,7 @@
                     <h3>Long-term Health</h3>
                     <p>Chronic poor sleep increases risk of cardiovascular disease, diabetes, and mental health issues</p>
                 </div>
-                <div class="benefit-card">
+                <div class="benefit-card benefit-card-primary">
                     <div class="benefit-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M12 2L2 7l10 5 10-5-10-5z"/>
@@ -339,17 +340,7 @@
                     <h3>Emotional Regulation</h3>
                     <p>Sleep deprivation amplifies stress responses, increases irritability, and reduces emotional resilience by 60%</p>
                 </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="3"/>
-                            <path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24"/>
-                        </svg>
-                    </div>
-                    <h3>Metabolic Function</h3>
-                    <p>Poor sleep disrupts glucose metabolism, increases insulin resistance, and triggers weight gain through hormonal imbalances</p>
-                </div>
-                <div class="benefit-card">
+                <div class="benefit-card benefit-card-primary">
                     <div class="benefit-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9c1.5 0 2.9.37 4.13 1.02"/>
@@ -359,7 +350,29 @@
                     <h3>Immune System</h3>
                     <p>Insufficient sleep reduces natural killer cell activity by 70%, making you 3x more susceptible to infections</p>
                 </div>
-                <div class="benefit-card">
+                <div class="benefit-card benefit-card-primary">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 3v18h18"/>
+                            <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/>
+                        </svg>
+                    </div>
+                    <h3>Productivity & Efficiency</h3>
+                    <p>Sleep deprivation reduces work performance by 25% and increases time-to-completion for complex tasks by 40%</p>
+                </div>
+                
+                <!-- Additional cards (hidden by default) -->
+                <div class="benefit-card benefit-card-additional" style="display: none;">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24"/>
+                        </svg>
+                    </div>
+                    <h3>Metabolic Function</h3>
+                    <p>Poor sleep disrupts glucose metabolism, increases insulin resistance, and triggers weight gain through hormonal imbalances</p>
+                </div>
+                <div class="benefit-card benefit-card-additional" style="display: none;">
                     <div class="benefit-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M12 2L2 7l10 5 10-5-10-5z"/>
@@ -370,7 +383,7 @@
                     <h3>Creativity & Innovation</h3>
                     <p>Sleep deprivation impairs divergent thinking, problem-solving abilities, and creative insight formation</p>
                 </div>
-                <div class="benefit-card">
+                <div class="benefit-card benefit-card-additional" style="display: none;">
                     <div class="benefit-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M12 2L2 7l10 5 10-5-10-5z"/>
@@ -381,7 +394,7 @@
                     <h3>Safety & Risk Assessment</h3>
                     <p>Poor sleep increases accident risk by 300% and impairs judgment in high-stakes situations</p>
                 </div>
-                <div class="benefit-card">
+                <div class="benefit-card benefit-card-additional" style="display: none;">
                     <div class="benefit-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
@@ -393,7 +406,7 @@
                     <h3>Social Relationships</h3>
                     <p>Sleep deprivation reduces empathy, social awareness, and communication effectiveness, straining personal and professional relationships</p>
                 </div>
-                <div class="benefit-card">
+                <div class="benefit-card benefit-card-additional" style="display: none;">
                     <div class="benefit-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
@@ -405,7 +418,7 @@
                     <h3>Learning & Memory</h3>
                     <p>Inadequate sleep prevents proper memory formation, reducing learning retention by up to 50%</p>
                 </div>
-                <div class="benefit-card">
+                <div class="benefit-card benefit-card-additional" style="display: none;">
                     <div class="benefit-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M12 2L2 7l10 5 10-5-10-5z"/>
@@ -416,20 +429,11 @@
                     <h3>Hormonal Balance</h3>
                     <p>Poor sleep disrupts cortisol, growth hormone, and testosterone production, affecting energy, mood, and physical development</p>
                 </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M3 3v18h18"/>
-                            <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/>
-                        </svg>
-                    </div>
-                    <h3>Productivity & Efficiency</h3>
-                    <p>Sleep deprivation reduces work performance by 25% and increases time-to-completion for complex tasks by 40%</p>
-                </div>
             </div>
-            <div class="benefits-cta">
-                <a href="quiz.html" class="btn btn-secondary">Take Sleep Assessment Quiz</a>
-                <button class="btn btn-primary">Schedule Your Assessment</button>
+            
+            <!-- More button -->
+            <div class="benefits-more-container">
+                <button class="btn btn-more" id="benefits-more-btn">More</button>
             </div>
         </div>
     </section>
@@ -439,7 +443,11 @@
         <div class="container">
             <div class="section-header">
                 <h2>Advanced Monitoring Technology</h2>
-                <p>State-of-the-art sensors and analytics for comprehensive sleep environment assessment</p>
+                <p>State-of-the-art sensors and analytics for a comprehensive sleep environment assessment</p>
+            </div>
+            <div class="technology-cta">
+                <a href="quiz.html" class="btn btn-secondary">Take Sleep Assessment Quiz</a>
+                <button class="btn btn-primary">Schedule Your Assessment</button>
             </div>
             <div class="tech-grid">
                 <div class="tech-category">
@@ -478,7 +486,7 @@
         <div class="container">
             <div class="section-header">
                 <h2>How We Compare</h2>
-                <p>See how SleepOptima's comprehensive approach differs from other sleep assessment services</p>
+                <p>See how Sanctuary Lab's comprehensive approach differs from other sleep assessment services</p>
             </div>
             <div class="comparison-table-container">
                 <table class="comparison-table">
@@ -494,53 +502,52 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="sleepoptima-row">
+                        <tr class="sanctuary-lab-row">
                             <td class="service-name">
-                                <strong>SleepOptima</strong>
-                                <span class="service-tag">Our Service</span>
+                                <strong>Sanctuary Lab</strong>
                             </td>
                             <td>4 days</td>
                             <td>In-home</td>
-                            <td>✅ Comprehensive (11 metrics)</td>
-                            <td>✅ Advanced (7 parameters)</td>
-                            <td>✅ AI-powered correlation analysis</td>
-                            <td>✅ Detailed optimization plan</td>
+                            <td><span class="icon-tick"></span> Comprehensive (11 metrics)</td>
+                            <td><span class="icon-tick"></span> Advanced (7 parameters)</td>
+                            <td><span class="icon-tick"></span> AI-powered correlation analysis</td>
+                            <td><span class="icon-tick"></span> Detailed optimization plan</td>
                         </tr>
                         <tr>
                             <td class="service-name">Sleep Lab PSG</td>
                             <td>1 night</td>
                             <td>Clinical facility</td>
-                            <td>❌ Limited</td>
-                            <td>✅ Comprehensive</td>
-                            <td>✅ Professional analysis</td>
-                            <td>⚠️ Medical focus only</td>
+                            <td><span class="icon-cross"></span> Limited</td>
+                            <td><span class="icon-tick"></span> Comprehensive</td>
+                            <td><span class="icon-tick"></span> Professional analysis</td>
+                            <td><span class="icon-question"></span> Medical focus only</td>
                         </tr>
                         <tr>
                             <td class="service-name">Home Sleep Tests</td>
                             <td>1-3 nights</td>
                             <td>In-home</td>
-                            <td>❌ None</td>
-                            <td>⚠️ Basic (breathing, heart rate)</td>
-                            <td>⚠️ Automated scoring</td>
-                            <td>⚠️ Limited recommendations</td>
+                            <td><span class="icon-cross"></span> None</td>
+                            <td><span class="icon-question"></span> Basic (breathing, heart rate)</td>
+                            <td><span class="icon-question"></span> Automated scoring</td>
+                            <td><span class="icon-question"></span> Limited recommendations</td>
                         </tr>
                         <tr>
                             <td class="service-name">Wearable Devices (Oura, Apple Watch)</td>
                             <td>Continuous</td>
                             <td>In-home</td>
-                            <td>❌ None</td>
-                            <td>⚠️ Basic (HR, movement)</td>
-                            <td>⚠️ Algorithm-based</td>
-                            <td>⚠️ Generic suggestions</td>
+                            <td><span class="icon-cross"></span> None</td>
+                            <td><span class="icon-question"></span> Basic (HR, movement)</td>
+                            <td><span class="icon-question"></span> Algorithm-based</td>
+                            <td><span class="icon-question"></span> Generic suggestions</td>
                         </tr>
                         <tr>
                             <td class="service-name">Sleep Questionnaires</td>
                             <td>5-15 minutes</td>
                             <td>Anywhere</td>
-                            <td>❌ None</td>
-                            <td>❌ None</td>
-                            <td>⚠️ Self-reported only</td>
-                            <td>⚠️ Generic advice</td>
+                            <td><span class="icon-cross"></span> None</td>
+                            <td><span class="icon-cross"></span> None</td>
+                            <td><span class="icon-question"></span> Self-reported only</td>
+                            <td><span class="icon-question"></span> Generic advice</td>
                         </tr>
                     </tbody>
                 </table>
@@ -595,28 +602,30 @@
                     <p>Ready to transform your sleep environment? Contact us to schedule your assessment.</p>
                     <div class="contact-details">
                         <div class="contact-item">
-                            <strong>Phone:</strong> (555) 123-4567
+                            <strong>Phone:</strong> +1 (747) 377-2670
                         </div>
                         <div class="contact-item">
-                            <strong>Email:</strong> hello@sleepoptima.com
-                        </div>
-                        <div class="contact-item">
-                            <strong>Service Area:</strong> Nationwide
+                            <strong>Service Area:</strong> Los Angeles, CA
                         </div>
                     </div>
                 </div>
-                <form class="contact-form">
+                <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="1d0048e3-724c-4834-9604-ba7bffd8c7e8">
+                    <input type="hidden" name="subject" value="Sleep Assessment Enquiry">
+                    <input type="hidden" name="to" value="asher.rose@summitstrategies.io">
+                    <input type="hidden" name="from_name" value="Sanctuary Lab Website">
+                    
                     <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
+                        <input type="text" name="name" placeholder="Your Name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="Email Address" required>
+                        <input type="email" name="email" placeholder="Email Address" required>
                     </div>
                     <div class="form-group">
-                        <input type="tel" placeholder="Phone Number">
+                        <input type="tel" name="phone" placeholder="Phone Number" required>
                     </div>
                     <div class="form-group">
-                        <textarea placeholder="Tell us about your sleep challenges" rows="4"></textarea>
+                        <textarea name="message" placeholder="Tell us about your sleep challenges" rows="4"></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Request Assessment</button>
                 </form>
@@ -629,7 +638,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <h3>SleepOptima</h3>
+                    <h3>Sanctuary Lab</h3>
                     <p>Optimizing sleep environments for peak performance</p>
                 </div>
                 <div class="footer-links">
@@ -640,7 +649,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 SleepOptima. All rights reserved.</p>
+                <p>&copy; 2024 Sanctuary Lab. All rights reserved.</p>
             </div>
         </div>
     </footer>

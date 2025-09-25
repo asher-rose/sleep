@@ -3,22 +3,8 @@
 class SleepQuiz {
     constructor() {
         this.currentQuestion = 1;
-        this.totalQuestions = 12;
+        this.totalQuestions = 6;
         this.answers = {};
-        this.questionWeights = {
-            sleep_duration: 1.2,
-            sleep_quality: 1.5,
-            sleep_onset: 1.0,
-            night_wakings: 1.3,
-            morning_energy: 1.4,
-            room_temp: 0.8,
-            light_exposure: 0.9,
-            noise_level: 0.9,
-            air_quality: 0.8,
-            stress_level: 1.1,
-            tech_use: 0.7,
-            sleep_consistency: 1.0
-        };
         
         this.init();
     }
@@ -89,7 +75,7 @@ class SleepQuiz {
         
         if (selectedOption) {
             const questionName = selectedOption.name;
-            const value = parseInt(selectedOption.value);
+            const value = parseFloat(selectedOption.value);
             this.answers[questionName] = value;
         }
     }
@@ -134,19 +120,24 @@ class SleepQuiz {
 
     calculateResults() {
         let totalScore = 0;
-        let maxScore = 0;
+        const maxPossibleScore = 30; // 6 questions × 5 points each
 
-        // Calculate weighted score
-        Object.keys(this.questionWeights).forEach(question => {
+        // Simple sum of all answer values
+        Object.keys(this.answers).forEach(question => {
             if (this.answers[question]) {
-                const weight = this.questionWeights[question];
-                totalScore += this.answers[question] * weight;
-                maxScore += 5 * weight; // Max value is 5 for each question
+                totalScore += parseFloat(this.answers[question]);
             }
         });
 
-        this.finalScore = Math.round((totalScore / maxScore) * 60); // Scale to 60
-        this.scorePercentage = Math.round((totalScore / maxScore) * 100);
+        // Calculate percentage: (totalScore / maxPossibleScore) × 100
+        this.scorePercentage = Math.floor((totalScore / maxPossibleScore) * 100);
+        this.finalScore = Math.floor((totalScore / maxPossibleScore) * 30); // For display consistency
+
+        // Debug logging
+        console.log('Total Score:', totalScore);
+        console.log('Max Possible Score:', maxPossibleScore);
+        console.log('Score Percentage:', this.scorePercentage);
+        console.log('Answers:', this.answers);
     }
 
     showResults() {
@@ -158,10 +149,11 @@ class SleepQuiz {
         results.style.display = 'block';
 
         // Update score display
-        document.getElementById('scoreNumber').textContent = this.finalScore;
+        const displayPercentage = isNaN(this.scorePercentage) ? 0 : this.scorePercentage;
+        document.getElementById('scorePercentage').textContent = `${displayPercentage}%`;
         
         // Determine category and recommendations
-        const category = this.getScoreCategory();
+        const category = this.getScoreCategory(displayPercentage);
         document.getElementById('categoryTitle').textContent = category.title;
         document.getElementById('categoryDescription').textContent = category.description;
         
@@ -169,23 +161,23 @@ class SleepQuiz {
         this.generateRecommendations();
     }
 
-    getScoreCategory() {
-        if (this.finalScore >= 50) {
+    getScoreCategory(percentage = this.scorePercentage) {
+        if (percentage >= 83) {
             return {
                 title: "Excellent Sleep Quality",
                 description: "Your sleep habits and environment are well-optimized. You're getting quality rest that supports peak performance."
             };
-        } else if (this.finalScore >= 40) {
+        } else if (percentage >= 67) {
             return {
                 title: "Good Sleep Quality",
                 description: "Your sleep is generally good with some areas for improvement. Small optimizations could enhance your rest quality."
             };
-        } else if (this.finalScore >= 30) {
+        } else if (percentage >= 50) {
             return {
                 title: "Fair Sleep Quality",
                 description: "Your sleep quality has room for improvement. Several factors may be impacting your rest and performance."
             };
-        } else if (this.finalScore >= 20) {
+        } else if (percentage >= 33) {
             return {
                 title: "Poor Sleep Quality",
                 description: "Your sleep quality is significantly impacting your well-being. Multiple factors need attention for better rest."

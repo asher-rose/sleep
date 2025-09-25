@@ -348,3 +348,139 @@ function createMobileMenu() {
 
 // Initialize mobile menu
 createMobileMenu();
+
+// Benefits section expand/collapse functionality
+function initBenefitsToggle() {
+    const moreBtn = document.getElementById('benefits-more-btn');
+    const benefitsGrid = document.querySelector('.benefits-grid');
+    const additionalCards = document.querySelectorAll('.benefit-card-additional');
+    
+    if (!moreBtn || !benefitsGrid || !additionalCards.length) return;
+    
+    let isExpanded = false;
+    
+    moreBtn.addEventListener('click', function() {
+        if (!isExpanded) {
+            // Expand: Show additional cards
+            benefitsGrid.classList.add('expanded');
+            additionalCards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.display = 'flex';
+                    card.classList.add('show');
+                }, index * 100); // Staggered animation
+            });
+            moreBtn.textContent = 'Less';
+            isExpanded = true;
+        } else {
+            // Collapse: Hide additional cards
+            additionalCards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.classList.remove('show');
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                    }, 300); // Wait for animation to complete
+                }, index * 50); // Reverse staggered animation
+            });
+            setTimeout(() => {
+                benefitsGrid.classList.remove('expanded');
+            }, additionalCards.length * 50 + 300);
+            moreBtn.textContent = 'More';
+            isExpanded = false;
+        }
+    });
+}
+
+// Initialize benefits toggle
+initBenefitsToggle();
+
+// Contact form handling
+function initContactForm() {
+    const form = document.querySelector('.contact-form');
+    console.log('Contact form found:', form);
+    if (!form) {
+        console.log('Contact form not found!');
+        return;
+    }
+
+    // Add click listener to button for debugging
+    const submitBtn = form.querySelector('button[type="submit"]');
+    submitBtn.addEventListener('click', function(e) {
+        console.log('Submit button clicked');
+    });
+
+    form.addEventListener('submit', async function(e) {
+        console.log('Form submit event triggered');
+        e.preventDefault();
+        console.log('Form submitted');
+        
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        
+        // Show loading state
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+        
+        try {
+            const formData = new FormData(form);
+            console.log('Form data:', Object.fromEntries(formData));
+            console.log('Submitting to:', form.action);
+            
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: formData
+            });
+            
+            console.log('Response status:', response.status);
+            console.log('Response ok:', response.ok);
+            
+            if (response.ok) {
+                // Show success message
+                showFormMessage('Thank you! Your sleep assessment enquiry has been sent successfully. We\'ll contact you soon.', 'success');
+                form.reset();
+            } else {
+                const errorText = await response.text();
+                console.error('Response error:', errorText);
+                throw new Error('Form submission failed');
+            }
+        } catch (error) {
+            console.error('Form submission error:', error);
+            // Show error message
+            showFormMessage('Sorry, there was an error sending your request. Please try again or contact us directly.', 'error');
+        } finally {
+            // Reset button
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        }
+    });
+}
+
+// Show form message
+function showFormMessage(message, type) {
+    // Remove existing messages
+    const existingMessage = document.querySelector('.form-message');
+    if (existingMessage) {
+        existingMessage.remove();
+    }
+    
+    // Create new message
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `form-message form-message-${type}`;
+    messageDiv.textContent = message;
+    
+    // Insert after form
+    const form = document.querySelector('.contact-form');
+    form.parentNode.insertBefore(messageDiv, form.nextSibling);
+    
+    // Auto-remove after 5 seconds
+    setTimeout(() => {
+        if (messageDiv.parentNode) {
+            messageDiv.remove();
+        }
+    }, 5000);
+}
+
+// Initialize contact form when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded, initializing contact form...');
+    initContactForm();
+});
