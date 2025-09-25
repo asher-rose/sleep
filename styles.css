@@ -2290,52 +2290,26 @@ p {
         padding: 1.5rem 1rem;
     }
     
-    /* Cycle Progression - Mobile Layout: 3 on top, 2 on bottom (bowling pin style) */
+    /* Cycle Progression - Mobile Layout: 3 on top, 2 on bottom */
     .cycle-progression {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: auto auto;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
         gap: 1rem;
         justify-items: center;
-        align-items: center;
-        max-width: 300px;
-        margin: 0 auto;
     }
     
-    /* Top row: Sleep Onset, Deep Sleep, REM Sleep */
-    .cycle-progression .cycle-phase:nth-child(1) {
-        grid-column: 1;
-        grid-row: 1;
+    .cycle-progression .cycle-phase:nth-child(4),
+    .cycle-progression .cycle-phase:nth-child(5) {
+        grid-column: span 1;
     }
     
-    .cycle-progression .cycle-phase:nth-child(2) {
-        grid-column: 2;
-        grid-row: 1;
-    }
-    
-    .cycle-progression .cycle-phase:nth-child(3) {
-        grid-column: 3;
-        grid-row: 1;
-    }
-    
-    /* Bottom row: Recovery, Awakening - positioned in gaps */
     .cycle-progression .cycle-phase:nth-child(4) {
         grid-column: 1;
-        grid-row: 2;
-        justify-self: center;
-        margin-right: 1rem;
     }
     
     .cycle-progression .cycle-phase:nth-child(5) {
         grid-column: 3;
-        grid-row: 2;
-        justify-self: center;
-        margin-left: 1rem;
-    }
-    
-    /* Add more space below the cycle progression */
-    .cycle-progression {
-        margin-bottom: 2rem;
     }
     
     .services-grid {
