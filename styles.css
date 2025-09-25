@@ -2292,75 +2292,45 @@ p {
     
     /* Cycle Progression - Mobile Layout: 3 on top, 2 on bottom (bowling pin style) */
     .cycle-progression {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto auto;
         gap: 1rem;
-        width: 100%;
-    }
-    
-    /* Top row container */
-    .cycle-progression::before {
-        content: '';
-        display: flex;
-        justify-content: center;
-        gap: 2rem;
-        width: 100%;
+        justify-items: center;
+        align-items: center;
+        max-width: 300px;
+        margin: 0 auto;
     }
     
     /* Top row: Sleep Onset, Deep Sleep, REM Sleep */
-    .cycle-progression .cycle-phase:nth-child(1),
-    .cycle-progression .cycle-phase:nth-child(2),
-    .cycle-progression .cycle-phase:nth-child(3) {
-        display: inline-block;
-    }
-    
-    /* Bottom row: Recovery, Awakening - positioned in gaps */
-    .cycle-progression .cycle-phase:nth-child(4),
-    .cycle-progression .cycle-phase:nth-child(5) {
-        display: inline-block;
-        margin: 0 1rem;
-    }
-    
-    /* Create the bowling pin layout with flexbox */
-    .cycle-progression {
-        position: relative;
-    }
-    
-    /* Top row positioning */
     .cycle-progression .cycle-phase:nth-child(1) {
-        position: absolute;
-        left: 25%;
-        top: 0;
+        grid-column: 1;
+        grid-row: 1;
     }
     
     .cycle-progression .cycle-phase:nth-child(2) {
-        position: absolute;
-        left: 50%;
-        top: 0;
-        transform: translateX(-50%);
+        grid-column: 2;
+        grid-row: 1;
     }
     
     .cycle-progression .cycle-phase:nth-child(3) {
-        position: absolute;
-        right: 25%;
-        top: 0;
+        grid-column: 3;
+        grid-row: 1;
     }
     
-    /* Bottom row positioning */
+    /* Bottom row: Recovery, Awakening - positioned in gaps */
     .cycle-progression .cycle-phase:nth-child(4) {
-        position: absolute;
-        left: 37.5%;
-        top: 80px;
-        transform: translateX(-50%);
+        grid-column: 1;
+        grid-row: 2;
+        justify-self: end;
+        margin-right: 0.5rem;
     }
     
     .cycle-progression .cycle-phase:nth-child(5) {
-        position: absolute;
-        right: 37.5%;
-        top: 80px;
-        transform: translateX(50%);
+        grid-column: 3;
+        grid-row: 2;
+        justify-self: start;
+        margin-left: 0.5rem;
     }
     
     .services-grid {
