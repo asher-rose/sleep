@@ -2290,8 +2290,8 @@ p {
         padding: 1.5rem 1rem;
     }
     
-    /* Sleep Quality Grid - Mobile Layout: 3 on top, 2 on bottom */
-    .sleep-quality {
+    /* Cycle Progression - Mobile Layout: 3 on top, 2 on bottom */
+    .cycle-progression {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(2, 1fr);
@@ -2299,16 +2299,16 @@ p {
         justify-items: center;
     }
     
-    .sleep-quality .quality-metric:nth-child(4),
-    .sleep-quality .quality-metric:nth-child(5) {
+    .cycle-progression .cycle-phase:nth-child(4),
+    .cycle-progression .cycle-phase:nth-child(5) {
         grid-column: span 1;
     }
     
-    .sleep-quality .quality-metric:nth-child(4) {
+    .cycle-progression .cycle-phase:nth-child(4) {
         grid-column: 1;
     }
     
-    .sleep-quality .quality-metric:nth-child(5) {
+    .cycle-progression .cycle-phase:nth-child(5) {
         grid-column: 3;
     }
     
