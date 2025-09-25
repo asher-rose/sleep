@@ -2470,3 +2470,14 @@ textarea:focus {
     outline: 2px solid var(--primary-color);
     outline-offset: 2px;
 }
+
+/* Form Field Error State */
+.field-error {
+    border-color: #fca5a5 !important;
+    background-color: #fef2f2 !important;
+}
+
+.field-error::placeholder {
+    color: #f87171 !important;
+    font-weight: 500;
+}

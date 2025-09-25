@@ -398,11 +398,41 @@ function initContactForm() {
     const form = document.querySelector('.contact-form');
     if (!form) return;
 
+    // Clear error state when user starts typing
+    const requiredFields = form.querySelectorAll('input[required]');
+    requiredFields.forEach(field => {
+        field.addEventListener('input', function() {
+            if (this.value.trim()) {
+                this.classList.remove('field-error');
+            }
+        });
+    });
+
     form.addEventListener('submit', function(e) {
-        const submitBtn = form.querySelector('button[type="submit"]');
-        const originalText = submitBtn.textContent;
+        // Check for empty required fields
+        let hasErrors = false;
         
-        // Show loading state
+        // Reset any previous error states
+        requiredFields.forEach(field => {
+            field.classList.remove('field-error');
+        });
+        
+        // Check each required field
+        requiredFields.forEach(field => {
+            if (!field.value.trim()) {
+                field.classList.add('field-error');
+                hasErrors = true;
+            }
+        });
+        
+        // If there are errors, prevent submission
+        if (hasErrors) {
+            e.preventDefault();
+            return;
+        }
+        
+        // If all fields are valid, proceed with submission
+        const submitBtn = form.querySelector('button[type="submit"]');
         submitBtn.textContent = 'Sending...';
         submitBtn.disabled = true;
         
