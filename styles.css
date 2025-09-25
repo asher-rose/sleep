@@ -2295,8 +2295,11 @@ p {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(2, 1fr);
-        gap: 1rem;
+        gap: 1.5rem;
         justify-items: center;
+        align-items: center;
+        max-width: 400px;
+        margin: 0 auto;
     }
     
     .cycle-progression .cycle-phase:nth-child(4),
@@ -2310,6 +2313,19 @@ p {
     
     .cycle-progression .cycle-phase:nth-child(5) {
         grid-column: 3;
+    }
+    
+    /* Center the phase labels better */
+    .cycle-phase {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .phase-label {
+        margin-top: 0.5rem;
+        text-align: center;
     }
     
     .services-grid {
