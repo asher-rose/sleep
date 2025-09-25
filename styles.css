@@ -2292,41 +2292,75 @@ p {
     
     /* Cycle Progression - Mobile Layout: 3 on top, 2 on bottom (bowling pin style) */
     .cycle-progression {
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        gap: 1rem;
-        justify-items: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         justify-content: center;
-        max-width: 400px;
-        margin: 0 auto;
+        gap: 1rem;
+        width: 100%;
     }
     
-    /* Top row: Sleep Onset (col 1), Deep Sleep (col 3), REM Sleep (col 5) */
+    /* Top row container */
+    .cycle-progression::before {
+        content: '';
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        width: 100%;
+    }
+    
+    /* Top row: Sleep Onset, Deep Sleep, REM Sleep */
+    .cycle-progression .cycle-phase:nth-child(1),
+    .cycle-progression .cycle-phase:nth-child(2),
+    .cycle-progression .cycle-phase:nth-child(3) {
+        display: inline-block;
+    }
+    
+    /* Bottom row: Recovery, Awakening - positioned in gaps */
+    .cycle-progression .cycle-phase:nth-child(4),
+    .cycle-progression .cycle-phase:nth-child(5) {
+        display: inline-block;
+        margin: 0 1rem;
+    }
+    
+    /* Create the bowling pin layout with flexbox */
+    .cycle-progression {
+        position: relative;
+    }
+    
+    /* Top row positioning */
     .cycle-progression .cycle-phase:nth-child(1) {
-        grid-column: 1;
-        grid-row: 1;
+        position: absolute;
+        left: 25%;
+        top: 0;
     }
     
     .cycle-progression .cycle-phase:nth-child(2) {
-        grid-column: 3;
-        grid-row: 1;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
     }
     
     .cycle-progression .cycle-phase:nth-child(3) {
-        grid-column: 5;
-        grid-row: 1;
+        position: absolute;
+        right: 25%;
+        top: 0;
     }
     
-    /* Bottom row: Recovery (col 2), Awakening (col 4) - in the gaps */
+    /* Bottom row positioning */
     .cycle-progression .cycle-phase:nth-child(4) {
-        grid-column: 2; /* Between Sleep Onset and Deep Sleep */
-        grid-row: 2;
+        position: absolute;
+        left: 37.5%;
+        top: 80px;
+        transform: translateX(-50%);
     }
     
     .cycle-progression .cycle-phase:nth-child(5) {
-        grid-column: 4; /* Between Deep Sleep and REM Sleep */
-        grid-row: 2;
+        position: absolute;
+        right: 37.5%;
+        top: 80px;
+        transform: translateX(50%);
     }
     
     .services-grid {
