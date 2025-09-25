@@ -2290,7 +2290,7 @@ p {
         padding: 1.5rem 1rem;
     }
     
-    /* Cycle Progression - Mobile Layout: 3 on top, 2 on bottom */
+    /* Cycle Progression - Mobile Layout: 3 on top, 2 on bottom (bowling pin style) */
     .cycle-progression {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -2299,17 +2299,15 @@ p {
         justify-items: center;
     }
     
-    .cycle-progression .cycle-phase:nth-child(4),
-    .cycle-progression .cycle-phase:nth-child(5) {
-        grid-column: span 1;
-    }
-    
+    /* Position bottom row icons in the gaps between top row icons */
     .cycle-progression .cycle-phase:nth-child(4) {
-        grid-column: 1;
+        grid-column: 1.5; /* Between first and second column */
+        grid-row: 2;
     }
     
     .cycle-progression .cycle-phase:nth-child(5) {
-        grid-column: 3;
+        grid-column: 2.5; /* Between second and third column */
+        grid-row: 2;
     }
     
     .services-grid {
