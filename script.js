@@ -433,12 +433,61 @@ function initContactForm() {
         
         // If all fields are valid, proceed with submission
         const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
         submitBtn.textContent = 'Sending...';
         submitBtn.disabled = true;
         
-        // Let web3forms handle the submission naturally
-        // Form will redirect to web3forms success page
+        // Submit to web3forms and show custom success message
+        const formData = new FormData(form);
+        
+        fetch(form.action, {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => {
+            if (response.ok) {
+                // Show custom success message
+                showFormMessage('Thank you, our team will be in touch with you shortly.', 'success');
+                form.reset();
+            } else {
+                throw new Error('Form submission failed');
+            }
+        })
+        .catch(error => {
+            console.error('Form submission error:', error);
+            showFormMessage('Sorry, there was an error sending your request. Please try again or contact us directly.', 'error');
+        })
+        .finally(() => {
+            // Reset button state
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        });
     });
+}
+
+// Show form message
+function showFormMessage(message, type) {
+    // Remove existing messages
+    const existingMessage = document.querySelector('.form-message');
+    if (existingMessage) {
+        existingMessage.remove();
+    }
+    
+    // Create new message
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `form-message form-message-${type}`;
+    messageDiv.textContent = message;
+    
+    // Insert after form
+    const form = document.querySelector('.contact-form');
+    form.parentNode.insertBefore(messageDiv, form.nextSibling);
+    
+    // Auto-remove after 5 seconds
+    setTimeout(() => {
+        if (messageDiv.parentNode) {
+            messageDiv.remove();
+        }
+    }, 5000);
 }
 
 // Initialize contact form
