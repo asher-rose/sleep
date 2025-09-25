@@ -2297,6 +2297,9 @@ p {
         grid-template-rows: repeat(2, 1fr);
         gap: 1rem;
         justify-items: center;
+        justify-content: center;
+        max-width: 400px;
+        margin: 0 auto;
     }
     
     /* Top row: Sleep Onset (col 1), Deep Sleep (col 3), REM Sleep (col 5) */
