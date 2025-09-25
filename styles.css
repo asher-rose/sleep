@@ -2322,15 +2322,20 @@ p {
     .cycle-progression .cycle-phase:nth-child(4) {
         grid-column: 1;
         grid-row: 2;
-        justify-self: end;
-        margin-right: 0.5rem;
+        justify-self: center;
+        margin-right: 1rem;
     }
     
     .cycle-progression .cycle-phase:nth-child(5) {
         grid-column: 3;
         grid-row: 2;
-        justify-self: start;
-        margin-left: 0.5rem;
+        justify-self: center;
+        margin-left: 1rem;
+    }
+    
+    /* Add more space below the cycle progression */
+    .cycle-progression {
+        margin-bottom: 2rem;
     }
     
     .services-grid {
