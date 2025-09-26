@@ -953,6 +953,52 @@ p {
     font-weight: bold;
 }
 
+/* Service Pricing */
+.service-price {
+    margin-top: auto;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.service-price .price {
+    font-family: 'Ovo', Georgia, 'Times New Roman', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    letter-spacing: 0.02em;
+}
+
+/* Featured Service Card */
+.service-card.featured {
+    border: 2px solid var(--accent-color);
+    background: linear-gradient(135deg, var(--bg-card) 0%, rgba(45, 90, 61, 0.05) 100%);
+    transform: scale(1.05);
+}
+
+.service-card.featured::before {
+    background: var(--bg-gradient-forest);
+    transform: scaleX(1);
+    box-shadow: 0 0 15px rgba(45, 90, 61, 0.6);
+}
+
+.service-card.featured:hover {
+    transform: translateY(-15px) scale(1.08);
+}
+
+.service-badge {
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    background: var(--bg-gradient-forest);
+    color: var(--text-primary);
+    padding: 0.5rem 1rem;
+    border-radius: 0 var(--radius-4xl) 0 var(--radius-xl);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    box-shadow: 0 4px 12px rgba(45, 90, 61, 0.3);
+}
+
 /* Benefits Section */
 .benefits {
     padding: 8rem 0;
