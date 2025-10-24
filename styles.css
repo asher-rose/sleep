@@ -2944,3 +2944,26 @@ textarea:focus {
         font-size: 0.9rem;
     }
 }
+
+/* Premium Package Centering and Spacing */
+.package-centered {
+    text-align: center;
+}
+
+.package-includes-list {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.package-includes-list p {
+    margin: 0.75rem 0;
+    line-height: 1.6;
+}
+
+.package-cta-spaced {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
