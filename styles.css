@@ -1782,15 +1782,14 @@ p {
     border-color: var(--accent-light);
 }
 
-/* Contact Section */
-.contact {
-    padding: 8rem 0 4rem 0;
+/* Green Section Wrapper (Contact + Footer) */
+.green-section-wrapper {
     background: var(--bg-gradient-luxury);
     position: relative;
     overflow: hidden;
 }
 
-.contact::before {
+.green-section-wrapper::before {
     content: '';
     position: absolute;
     top: 0;
@@ -1805,7 +1804,7 @@ p {
     pointer-events: none;
 }
 
-.contact::after {
+.green-section-wrapper::after {
     content: '';
     position: absolute;
     top: 0;
@@ -1816,6 +1815,13 @@ p {
         linear-gradient(45deg, transparent 0%, rgba(45, 90, 61, 0.02) 50%, transparent 100%),
         linear-gradient(-45deg, transparent 0%, rgba(74, 124, 89, 0.015) 50%, transparent 100%);
     pointer-events: none;
+}
+
+/* Contact Section */
+.contact {
+    padding: 8rem 0 4rem 0;
+    background: transparent;
+    position: relative;
 }
 
 .contact-content {
@@ -2304,40 +2310,11 @@ p {
 
 /* Footer */
 .footer {
-    background: var(--bg-gradient-luxury);
+    background: transparent;
     color: white;
     padding: 4rem 0 2rem;
     position: relative;
-    overflow: hidden;
     margin-top: 0;
-}
-
-.footer::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        radial-gradient(circle at 20% 80%, rgba(45, 90, 61, 0.12) 0%, transparent 60%),
-        radial-gradient(circle at 80% 20%, rgba(74, 124, 89, 0.06) 0%, transparent 60%),
-        radial-gradient(circle at 50% 50%, rgba(45, 90, 61, 0.04) 0%, transparent 70%),
-        radial-gradient(circle at 30% 30%, rgba(107, 142, 107, 0.02) 0%, transparent 50%);
-    pointer-events: none;
-}
-
-.footer::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        linear-gradient(45deg, transparent 0%, rgba(45, 90, 61, 0.02) 50%, transparent 100%),
-        linear-gradient(-45deg, transparent 0%, rgba(74, 124, 89, 0.015) 50%, transparent 100%);
-    pointer-events: none;
 }
 
 .footer-content {
