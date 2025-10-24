@@ -1,4 +1,4 @@
-// Smooth scrolling for navigation links
+// Smooth scrolling for navigation links - Updated
 document.addEventListener('DOMContentLoaded', function() {
     // Navigation smooth scrolling
     const navLinks = document.querySelectorAll('.nav-link');
