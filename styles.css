@@ -1784,7 +1784,7 @@ p {
 
 /* Contact Section */
 .contact {
-    padding: 8rem 0;
+    padding: 8rem 0 4rem 0;
     background: var(--bg-gradient-luxury);
     position: relative;
     overflow: hidden;
@@ -2306,9 +2306,10 @@ p {
 .footer {
     background: var(--bg-gradient-luxury);
     color: white;
-    padding: 3rem 0 2rem;
+    padding: 4rem 0 2rem;
     position: relative;
     overflow: hidden;
+    margin-top: 0;
 }
 
 .footer::before {
