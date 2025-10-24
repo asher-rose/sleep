@@ -1785,8 +1785,9 @@ p {
 /* Contact Section */
 .contact {
     padding: 8rem 0;
-    background: var(--bg-primary);
+    background: var(--bg-gradient-luxury);
     position: relative;
+    overflow: hidden;
 }
 
 .contact::before {
@@ -1796,7 +1797,24 @@ p {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(212, 175, 55, 0.01) 0%, transparent 50%);
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(45, 90, 61, 0.12) 0%, transparent 60%),
+        radial-gradient(circle at 80% 20%, rgba(74, 124, 89, 0.06) 0%, transparent 60%),
+        radial-gradient(circle at 50% 50%, rgba(45, 90, 61, 0.04) 0%, transparent 70%),
+        radial-gradient(circle at 30% 30%, rgba(107, 142, 107, 0.02) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.contact::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(45deg, transparent 0%, rgba(45, 90, 61, 0.02) 50%, transparent 100%),
+        linear-gradient(-45deg, transparent 0%, rgba(74, 124, 89, 0.015) 50%, transparent 100%);
     pointer-events: none;
 }
 
@@ -1805,6 +1823,8 @@ p {
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: start;
+    position: relative;
+    z-index: 1;
 }
 
 .contact-info h2 {
