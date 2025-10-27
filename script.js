@@ -141,7 +141,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // CTA button interactions
     const ctaButtons = document.querySelectorAll('.btn-primary');
     ctaButtons.forEach(button => {
-        if (button.textContent.includes('Schedule') || button.textContent.includes('Assessment')) {
+        // Only handle buttons that are not links (don't have href attribute)
+        if (!button.hasAttribute('href') && (button.textContent.includes('Schedule') || button.textContent.includes('Assessment'))) {
             button.addEventListener('click', function(e) {
                 e.preventDefault();
                 const contactSection = document.querySelector('#contact');
