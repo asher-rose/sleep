@@ -10,6 +10,73 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
+    <style>
+        .privacy-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            min-height: 80vh;
+        }
+        
+        .privacy-content {
+            max-width: 800px;
+            margin: 0 auto;
+            display: grid;
+            gap: 2rem;
+        }
+        
+        .privacy-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        
+        .privacy-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(45, 90, 61, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .privacy-card h3 {
+            color: #2d5a3d;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .privacy-card p {
+            color: #e5e5e5;
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+        }
+        
+        .privacy-footer {
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-header h1 {
+            color: #ffffff;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .section-header p {
+            color: #888;
+            font-size: 1.1rem;
+        }
+    </style>
+    
     <!-- Meta Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
@@ -49,75 +116,48 @@
     <!-- Privacy Policy Section -->
     <section class="privacy-section">
         <div class="container">
-            <div class="privacy-header">
+            <div class="section-header">
                 <h1>Privacy Policy</h1>
-                <p class="privacy-intro">Last updated: December 2024</p>
+                <p>Last updated: December 2024</p>
             </div>
 
             <div class="privacy-content">
-                <div class="privacy-section-content">
-                    <h2>Information We Collect</h2>
-                    <p>Sanctuary Lab collects information necessary to provide our sleep environment assessment services, including:</p>
-                    <ul>
-                        <li>Contact information (name, email, phone number)</li>
-                        <li>Sleep environment data collected during assessments</li>
-                        <li>Physiological monitoring data</li>
-                        <li>Website usage information through analytics</li>
-                    </ul>
+                <div class="privacy-card">
+                    <h3>Information We Collect</h3>
+                    <p>We collect information necessary to provide our sleep environment assessment services:</p>
+                    <p>• Contact information (name, email, phone number)<br>
+                    • Sleep environment data from assessments<br>
+                    • Physiological monitoring data<br>
+                    • Website usage analytics</p>
                 </div>
 
-                <div class="privacy-section-content">
-                    <h2>How We Use Your Information</h2>
-                    <p>We use the information we collect to:</p>
-                    <ul>
-                        <li>Provide sleep environment assessment services</li>
-                        <li>Generate personalized sleep optimization recommendations</li>
-                        <li>Communicate with you about our services</li>
-                        <li>Improve our website and services</li>
-                    </ul>
+                <div class="privacy-card">
+                    <h3>How We Use Your Information</h3>
+                    <p>Your information is used to:</p>
+                    <p>• Provide sleep environment assessment services<br>
+                    • Generate personalized recommendations<br>
+                    • Communicate about our services<br>
+                    • Improve our website and services</p>
                 </div>
 
-                <div class="privacy-section-content">
-                    <h2>Data Security</h2>
-                    <p>We implement appropriate security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. All data collected during assessments is stored securely and accessed only by authorized personnel.</p>
+                <div class="privacy-card">
+                    <h3>Data Security & Privacy</h3>
+                    <p>We implement appropriate security measures to protect your personal information. All assessment data is stored securely and accessed only by authorized personnel. We do not sell, trade, or transfer your personal information to third parties without your consent.</p>
                 </div>
 
-                <div class="privacy-section-content">
-                    <h2>Data Sharing</h2>
-                    <p>We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except as required by law or to provide our services.</p>
+                <div class="privacy-card">
+                    <h3>Your Rights</h3>
+                    <p>You have the right to access, correct, or delete your personal information, and to opt out of communications at any time.</p>
                 </div>
 
-                <div class="privacy-section-content">
-                    <h2>Cookies and Tracking</h2>
-                    <p>Our website uses cookies and similar tracking technologies to improve user experience and analyze website traffic. You can control cookie settings through your browser preferences.</p>
-                </div>
-
-                <div class="privacy-section-content">
-                    <h2>Your Rights</h2>
-                    <p>You have the right to:</p>
-                    <ul>
-                        <li>Access your personal information</li>
-                        <li>Request correction of inaccurate data</li>
-                        <li>Request deletion of your data</li>
-                        <li>Opt out of communications</li>
-                    </ul>
-                </div>
-
-                <div class="privacy-section-content">
-                    <h2>Contact Us</h2>
-                    <p>If you have any questions about this Privacy Policy, please contact us:</p>
-                    <p><strong>Phone:</strong> +1 (747) 377-2670<br>
-                    <strong>Email:</strong> asher.rose@summitstrategies.io</p>
-                </div>
-
-                <div class="privacy-section-content">
-                    <h2>Changes to This Policy</h2>
-                    <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date.</p>
+                <div class="privacy-card">
+                    <h3>Contact & Updates</h3>
+                    <p>For questions about this Privacy Policy, contact us at +1 (747) 377-2670 or asher.rose@summitstrategies.io. We may update this policy from time to time and will post changes on this page.</p>
                 </div>
             </div>
 
             <div class="privacy-footer">
-                <a href="index.html" class="btn btn-secondary">Back to Home</a>
+                <a href="index.html" class="btn btn-primary">Back to Home</a>
             </div>
         </div>
     </section>
