@@ -113,10 +113,78 @@ class SleepQuiz {
     }
 
     submitQuiz() {
-        this.saveCurrentAnswer();
-        this.calculateResults();
-        this.showResults();
+		this.saveCurrentAnswer();
+		this.showEmailGate();
     }
+
+	showEmailGate() {
+		// Hide quiz Q&A container
+		const quizContainer = document.querySelector('.quiz-container');
+		if (quizContainer) quizContainer.style.display = 'none';
+
+		// Show email gate
+		const emailGate = document.getElementById('quizEmailGate');
+		if (emailGate) emailGate.style.display = 'block';
+
+		// Attach submit handler once
+		const form = document.getElementById('emailGateForm');
+		if (form && !form.dataset.bound) {
+			form.addEventListener('submit', async (e) => {
+				e.preventDefault();
+				const input = document.getElementById('emailGateInput');
+				const email = (input && input.value || '').trim();
+
+				if (!this.isValidEmail(email)) {
+					if (input) input.focus();
+					return;
+				}
+
+				// Optionally store for later use
+				try { localStorage.setItem('sleep_quiz_email', email); } catch (_) {}
+
+				// Calculate results now so we can include them in submission
+				this.calculateResults();
+
+				// Fill hidden fields for Web3Forms
+				const answersJsonField = document.getElementById('wf_answers_json');
+				const scoreField = document.getElementById('wf_score_percentage');
+				if (answersJsonField) answersJsonField.value = JSON.stringify(this.answers);
+				if (scoreField) scoreField.value = String(this.scorePercentage || 0);
+
+				// Submit to Web3Forms without navigating away
+				const submitButton = form.querySelector('button[type="submit"]');
+				if (submitButton) {
+					submitButton.disabled = true;
+					submitButton.textContent = 'Submitting...';
+				}
+
+				try {
+					const formData = new FormData(form);
+					const response = await fetch('https://api.web3forms.com/submit', {
+						method: 'POST',
+						body: formData
+					});
+					const data = await response.json().catch(() => ({ success: false }));
+					// Proceed regardless; optionally, you could display a toast on failure
+				} catch (err) {
+					// Network or other error - proceed to results anyway
+				} finally {
+					if (submitButton) {
+						submitButton.disabled = false;
+						submitButton.textContent = 'Show My Results';
+					}
+					// Hide email gate and show results
+					emailGate.style.display = 'none';
+					this.showResults();
+				}
+			});
+			form.dataset.bound = 'true';
+		}
+	}
+
+	isValidEmail(email) {
+		return /\S+@\S+\.\S+/.test(email);
+	}
 
     calculateResults() {
         let totalScore = 0;
@@ -157,8 +225,6 @@ class SleepQuiz {
         document.getElementById('categoryTitle').textContent = category.title;
         document.getElementById('categoryDescription').textContent = category.description;
         
-        // Generate recommendations
-        this.generateRecommendations();
     }
 
     getScoreCategory(percentage = this.scorePercentage) {
@@ -190,83 +256,6 @@ class SleepQuiz {
         }
     }
 
-    generateRecommendations() {
-        const recommendations = [];
-        
-        // Analyze specific areas for improvement
-        if (this.answers.sleep_duration && this.answers.sleep_duration <= 2) {
-            recommendations.push({
-                title: "Optimize Sleep Duration",
-                description: "Aim for 7-9 hours of sleep per night. Create a consistent bedtime routine to ensure adequate rest."
-            });
-        }
-
-        if (this.answers.room_temp && this.answers.room_temp <= 2) {
-            recommendations.push({
-                title: "Improve Room Temperature",
-                description: "Keep your bedroom between 60-67°F (15-19°C) for optimal sleep. Consider a fan or air conditioning."
-            });
-        }
-
-        if (this.answers.light_exposure && this.answers.light_exposure <= 2) {
-            recommendations.push({
-                title: "Reduce Light Exposure",
-                description: "Use blackout curtains or an eye mask. Avoid bright lights 1 hour before bedtime."
-            });
-        }
-
-        if (this.answers.noise_level && this.answers.noise_level <= 2) {
-            recommendations.push({
-                title: "Minimize Noise",
-                description: "Use earplugs or white noise machines. Consider soundproofing your bedroom."
-            });
-        }
-
-        if (this.answers.air_quality && this.answers.air_quality <= 2) {
-            recommendations.push({
-                title: "Improve Air Quality",
-                description: "Ensure proper ventilation. Consider an air purifier and regular cleaning to reduce allergens."
-            });
-        }
-
-        if (this.answers.tech_use && this.answers.tech_use <= 2) {
-            recommendations.push({
-                title: "Limit Technology Use",
-                description: "Avoid screens 1 hour before bed. Keep devices out of the bedroom or use blue light filters."
-            });
-        }
-
-        if (this.answers.stress_level && this.answers.stress_level <= 2) {
-            recommendations.push({
-                title: "Manage Stress",
-                description: "Practice relaxation techniques like meditation or deep breathing before bedtime."
-            });
-        }
-
-        if (this.answers.sleep_consistency && this.answers.sleep_consistency <= 2) {
-            recommendations.push({
-                title: "Maintain Consistent Schedule",
-                description: "Go to bed and wake up at the same time every day, even on weekends."
-            });
-        }
-
-        // If no specific recommendations, provide general ones
-        if (recommendations.length === 0) {
-            recommendations.push({
-                title: "Maintain Current Habits",
-                description: "Your sleep habits are good. Continue your current routine and consider professional monitoring for optimization."
-            });
-        }
-
-        // Display recommendations
-        const recommendationList = document.getElementById('recommendationList');
-        recommendationList.innerHTML = recommendations.map(rec => `
-            <div class="recommendation-item">
-                <h4>${rec.title}</h4>
-                <p>${rec.description}</p>
-            </div>
-        `).join('');
-    }
 }
 
 // Initialize quiz when page loads
