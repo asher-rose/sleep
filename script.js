@@ -24,17 +24,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Ultra-premium navbar background on scroll
+    // Clean minimal navbar background on scroll
     const nav = document.querySelector('.nav');
     window.addEventListener('scroll', function() {
         if (window.scrollY > 50) {
-            nav.style.background = 'rgba(26, 26, 26, 0.98)';
-            nav.style.boxShadow = '0 32px 64px -12px rgba(0, 0, 0, 0.8)';
-            nav.style.backdropFilter = 'blur(30px)';
+            nav.style.background = 'rgba(255, 255, 255, 0.98)';
+            nav.style.boxShadow = '0 1px 3px 0 rgb(0 0 0 / 0.1)';
+            nav.style.backdropFilter = 'blur(20px)';
         } else {
-            nav.style.background = 'rgba(26, 26, 26, 0.8)';
-            nav.style.boxShadow = '0 32px 64px -12px rgba(0, 0, 0, 0.8)';
-            nav.style.backdropFilter = 'blur(30px)';
+            nav.style.background = 'rgba(255, 255, 255, 0.95)';
+            nav.style.boxShadow = '0 1px 2px 0 rgb(0 0 0 / 0.05)';
+            nav.style.backdropFilter = 'blur(20px)';
         }
     });
 
