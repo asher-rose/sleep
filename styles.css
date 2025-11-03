@@ -3108,14 +3108,34 @@ textarea:focus {
     text-align: center;
 }
 
+.package-benefits {
+    margin-bottom: 2.5rem;
+}
+
+.package-benefits h3 {
+    font-size: 1.5rem;
+    color: #000000;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 600;
+}
+
 .package-includes-list {
-    max-width: 600px;
+    max-width: 700px;
     margin: 0 auto;
+    text-align: center;
 }
 
 .package-includes-list p {
-    margin: 0.75rem 0;
-    line-height: 1.6;
+    margin: 1rem 0;
+    line-height: 1.7;
+    color: #1a1a1a;
+    font-size: 1rem;
+}
+
+.package-includes-list p strong {
+    color: var(--accent-color);
+    font-weight: 600;
 }
 
 .package-cta-spaced {
@@ -3123,5 +3143,107 @@ textarea:focus {
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
-    margin-top: 2rem;
+    margin-top: 2.5rem;
+}
+
+.package-price-box {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.price-label {
+    display: block;
+    font-size: 0.9rem;
+    color: #4a4a4a;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.price-comparison {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+}
+
+.price-original {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #9ca3af;
+    text-decoration: line-through;
+    position: relative;
+}
+
+.price-value {
+    display: inline-block;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #000000;
+    line-height: 1;
+}
+
+.discount-badge {
+    display: inline-block;
+    background: var(--accent-color);
+    color: #ffffff;
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.price-note {
+    display: block;
+    font-size: 0.9rem;
+    color: #4a4a4a;
+    font-weight: 400;
+    margin-top: 0.5rem;
+}
+
+.cta-buttons-group {
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.btn-full {
+    width: 100%;
+    max-width: 500px;
+}
+
+.cta-subtext {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    color: #1a1a1a;
+    line-height: 1.6;
+}
+
+.cta-subtext a {
+    transition: color 0.3s ease;
+}
+
+.cta-subtext a:hover {
+    color: var(--accent-light);
+}
+
+.trust-signals {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e5e7eb;
+    width: 100%;
+    max-width: 600px;
+}
+
+.trust-text {
+    font-size: 0.875rem;
+    color: #4a4a4a;
+    text-align: center;
+    line-height: 1.6;
+    margin: 0;
 }
