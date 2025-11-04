@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function() {
     metricCards.forEach(card => {
         card.addEventListener('mouseenter', function() {
             this.style.transform = 'translateY(-12px) scale(1.05)';
-            this.style.boxShadow = '0 32px 64px -12px rgba(0, 0, 0, 0.8), 0 0 30px rgba(45, 90, 61, 0.3)';
+            this.style.boxShadow = '0 32px 64px -12px rgba(0, 0, 0, 0.8), 0 0 30px rgba(45, 81, 111, 0.3)';
         });
         
         card.addEventListener('mouseleave', function() {
@@ -304,7 +304,7 @@ function createScrollProgress() {
         left: 0;
         width: 0%;
         height: 3px;
-        background: linear-gradient(90deg, #2d5a3d, #4a7c59);
+        background: linear-gradient(90deg, #2D516F, #051846);
         z-index: 10001;
         transition: width 0.1s ease;
     `;
