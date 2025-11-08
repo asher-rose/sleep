@@ -145,11 +145,14 @@ class SleepQuiz {
 				// Calculate results now so we can include them in submission
 				this.calculateResults();
 
-				// Fill hidden fields for Web3Forms
+				const answersJson = JSON.stringify(this.answers);
+				const scoreValue = String(this.scorePercentage ?? 0);
+
+				// Fill hidden fields for Web3Forms (fallback if native submission fires)
 				const answersJsonField = document.getElementById('wf_answers_json');
 				const scoreField = document.getElementById('wf_score_percentage');
-				if (answersJsonField) answersJsonField.value = JSON.stringify(this.answers);
-				if (scoreField) scoreField.value = String(this.scorePercentage || 0);
+				if (answersJsonField) answersJsonField.value = answersJson;
+				if (scoreField) scoreField.value = scoreValue;
 
 				// Submit to Web3Forms without navigating away
 				const submitButton = form.querySelector('button[type="submit"]');
@@ -158,16 +161,34 @@ class SleepQuiz {
 					submitButton.textContent = 'Submitting...';
 				}
 
+				const payload = {
+					access_key: form.querySelector('input[name="access_key"]')?.value || '',
+					subject: form.querySelector('input[name="subject"]')?.value || 'Sleep Quiz Results',
+					to: form.querySelector('input[name="to"]')?.value || 'asher.rose@summitstrategies.io',
+					redirect: 'false',
+					email,
+					score_percentage: scoreValue,
+					answers_json: answersJson,
+					quiz_url: window.location.href,
+					user_agent: navigator.userAgent
+				};
+
 				try {
-					const formData = new FormData(form);
 					const response = await fetch('https://api.web3forms.com/submit', {
 						method: 'POST',
-						body: formData
+						headers: {
+							'Content-Type': 'application/json',
+							'Accept': 'application/json'
+						},
+						body: JSON.stringify(payload)
 					});
+
 					const data = await response.json().catch(() => ({ success: false }));
-					// Proceed regardless; optionally, you could display a toast on failure
+					if (!data.success) {
+						console.warn('Web3Forms submission returned without success flag.', data);
+					}
 				} catch (err) {
-					// Network or other error - proceed to results anyway
+					console.error('Web3Forms submission failed.', err);
 				} finally {
 					if (submitButton) {
 						submitButton.disabled = false;
