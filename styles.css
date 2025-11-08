@@ -3394,11 +3394,11 @@ textarea:focus {
 }
 
 .package-includes-list p {
-    margin: 1.25rem 0;
-    line-height: 1.8;
+    margin: 0.75rem 0;
+    line-height: 1.6;
     color: #1a1a1a;
-    font-size: clamp(1rem, 1.5vw, 1.125rem);
-    padding: 0.75rem 0;
+    font-size: clamp(0.95rem, 1.25vw, 1.05rem);
+    padding: 0.35rem 0;
 }
 
 .package-includes-list p strong {
@@ -3448,11 +3448,11 @@ textarea:focus {
 
 .price-value {
     display: inline-block;
-    font-size: clamp(3rem, 6vw, 4.5rem);
+    font-size: clamp(2.2rem, 5vw, 3rem);
     font-weight: 700;
     color: #000000;
-    line-height: 1;
-    letter-spacing: -0.03em;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
     font-family: 'Playfair Display', serif;
 }
 
