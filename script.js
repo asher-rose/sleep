@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+
     // Clean minimal navbar background on scroll
     const nav = document.querySelector('.nav');
     window.addEventListener('scroll', function() {
